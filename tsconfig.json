@@ -13,5 +13,5 @@
     "**/*.tsx",
     ".expo/types/**/*.ts",
     "expo-env.d.ts"
-  ]
+, "app/login.js", "components/NavigationBar.js", "app/_layout.js", "context/CartContext.js", "app/home.js", "context/CartContext.jsx", "app/CartContext.js"  ]
 }

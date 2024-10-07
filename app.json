@@ -2,6 +2,13 @@
   "expo": {
     "name": "Food",
     "slug": "Food",
+    "auth": {
+      "google": {
+        "clientId": "297394516837-fucngevtqas4j0iic02sp8hnnlcqap3s.apps.googleusercontent.com",
+        "clientSecret": "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",
+        "redirectUri": "https://auth.expo.io/@sagar07/Food"
+      }
+    },
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,9 +20,12 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
+      "bundleIdentifier": "com.example.food",
       "supportsTablet": true
     },
     "android": {
+      "package": "com.example.food",
+      "permissions": ["INTERNET"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -27,10 +37,42 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "buildTypes": {
+              "release": {
+                "manifest": {
+                  "application": {
+                    "activity": {
+                      "windowSoftInputMode": "adjustNothing"
+                    }
+                  }
+                }
+              },
+              "debug": {
+                "manifest": {
+                  "application": {
+                    "activity": {
+                      "windowSoftInputMode": "adjustNothing"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
       "expo-router"
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "27aa6838-a177-4095-9a7e-3854cc0470f2"
+      }
     }
   }
 }
